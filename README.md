@@ -1,5 +1,9 @@
 # Project Installation Guide
 
+This project includes Apache Jena for parsing DOAP files.
+
+It also includes ANTLR for parsing code files. It can be ignored. It might be useful for parsing GitHub template files.
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your system:
