@@ -1,0 +1,35 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://usefulinc.com/ns/doap#"
+    xmlns:j.1="http://xmlns.com/foaf/0.1/">
+  <rdf:Description rdf:about="https://project-act.info/projects/ov-tessellation">
+    <j.0:documenter>
+      <rdf:Description rdf:about="https://project-act.info/people/DanHugo">
+        <j.1:mbox rdf:resource="mailto:dhugo@reallycool.com"/>
+        <j.1:homepage rdf:resource="https://github.com/DanHugoDanHugo"/>
+        <j.1:name>Dan Hugo</j.1:name>
+      </rdf:Description>
+    </j.0:documenter>
+    <j.0:description>The Tessellation Overview is a starting point for specification, documentation, and ideation toward development of essential and useful components which will make up a functional system of opt-in advertisement of organization and project participants in one or more development communities to facilitate collaboration without a top down management infrastructure.</j.0:description>
+    <j.0:name>Tessellation Project Overview</j.0:name>
+    <j.0:bug-database rdf:resource="https://github.com/Project-ACT/ov-tessellation/issues"/>
+    <j.0:shortdesc>The goal of the Tessellation Project is to establish an opt-in, decentralized means of project discovery to capture, communicate, and collaborate.</j.0:shortdesc>
+    <j.0:repository>
+      <rdf:Description rdf:about="https://project-act.info/projects/ov-tessellation/repo">
+        <j.0:browse rdf:resource="https://github.com/Project-ACT/ov-tessellation"/>
+        <j.0:location rdf:resource="https://github.com/Project-ACT/ov-tessellation.git"/>
+      </rdf:Description>
+    </j.0:repository>
+    <j.0:homepage rdf:resource="https://github.com/Project-ACT/ov-tessellation"/>
+    <j.0:license rdf:resource="http://spdx.org/licenses/GPL-3.0-only"/>
+    <j.0:Specification rdf:resource="https://github.com/Project-ACT/ov-tessellation/tree/main/doc"/>
+    <j.0:maintainer>
+      <rdf:Description rdf:about="https://project-act.info/people/DevOps">
+        <j.1:mbox rdf:resource="mailto:devops@project-act.info"/>
+        <j.1:homepage rdf:resource="https://github.com/DevOps-Project-ACT"/>
+        <j.1:name>DevOps - Project-ACT</j.1:name>
+      </rdf:Description>
+    </j.0:maintainer>
+    <j.1:maker rdf:resource="https://project-act.info/people/DanHugo"/>
+  </rdf:Description>
+</rdf:RDF>
