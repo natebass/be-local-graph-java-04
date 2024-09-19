@@ -1,18 +1,21 @@
 package info.project_act.tessellation.cmd;
 
-import info.project_act.tessellation.feature.workingdirectory.ProjectAnalyzer;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Parameters;
 
 import static info.project_act.tessellation.feature.github.Github.GetGithubProject;
 import static info.project_act.tessellation.feature.workingdirectory.ProjectAnalyzer.AnalyzeWorkingDirectory;
+import static info.project_act.tessellation.utilities.RdfUtilities.ConvertDoapN3ToRdf;
 
 @Command(name = "analyze", description = "Analyzes the project directory")
 public class ProjectAnalyzerCommand implements Runnable {
 
     @Parameters(index = "0", description = "Command to execute.")
     private String command;
+
+    @CommandLine.Option(names = {"-n", "--n3"}, description = "Generate rdf file from n3.")
+    private String n3FilePath;
 
     @CommandLine.Option(names = {"-d", "--directory"}, description = "The project directory to analyze.")
     private String projectDir;
@@ -31,6 +34,9 @@ public class ProjectAnalyzerCommand implements Runnable {
                 break;
             case "github":
                 GetGithubProject(new String[]{projectDir});
+                break;
+            case "convert":
+                ConvertDoapN3ToRdf(new String[]{n3FilePath, "doapn3.rdf"});
                 break;
             default:
                 System.out.println("Invalid command: " + command);
