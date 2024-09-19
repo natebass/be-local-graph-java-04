@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:doap="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:admin="http://webns.net/mvcb/">
+  <rdf:Description rdf:about="">
+    <admin:generatorAgent rdf:resource="http://doapy.bonjourlesmouettes.org/doap-a-matic"/>
+  </rdf:Description>
+  <doap:Project rdf:ID="julie">
+    <doap:name>julie, aka redlandbot</doap:name>
+    <doap:shortname>julie</doap:shortname>
+    <doap:homepage rdf:resource="http://crschmidt.net/julie/"/>
+    <doap:created>2004-08-28</doap:created>
+    <doap:description>Julie is an IRC bot based around the Redland RDF framework. She doesn't do much herself other than sit on IRC and wait for people to tell her things or ask her things.</doap:description>
+    <doap:shortdesc>Julie is an IRC bot based around the Redland RDF framework.</doap:shortdesc>
+    <doap:programming-language>Python</doap:programming-language>
+    <doap:license rdf:resource="http://usefulinc.com/doap/licenses/mit"/>
+    <doap:download-page rdf:resource="http://crschmidt.net/julie/source/"/>
+    <doap:maintainer>
+      <foaf:Person>
+        <foaf:name>Christopher Schmidt</foaf:name>
+        <foaf:nick>crschmidt</foaf:nick>
+        <foaf:mbox_sha1sum>d1235763342ad472a26e0cc3b2cc01268c98690d</foaf:mbox_sha1sum>
+        <rdfs:seeAlso rdf:resource="http://crschmidt.net/foaf.rdf"/>
+      </foaf:Person>
+    </doap:maintainer>
+  </doap:Project>
+</rdf:RDF>

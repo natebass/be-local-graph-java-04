@@ -22,23 +22,23 @@ Before you begin, ensure you have the following installed on your system:
 
 2. **Build the project:**
 
-    Navigate to the root directory of the project and run the following command to build the project using Maven:
+   Navigate to the root directory of the project and run the following command to build the project using Maven:
 
     ```sh
     mvn clean install
     ```
 
-    This command will compile the project, run the tests, and package the application.
+   This command will compile the project, run the tests, and package the application.
 
 3. **Run the tests:**
 
-    To run the tests, use the following command:
+   To run the tests, use the following command:
 
     ```sh
     mvn test
     ```
 
-    This will execute all the unit tests in the project.
+   This will execute all the unit tests in the project.
 
 ## Directory Structure
 
@@ -50,7 +50,8 @@ Before you begin, ensure you have the following installed on your system:
 ## Additional Information
 
 - **Dependencies:** All project dependencies are managed through Maven and are specified in the `pom.xml` file.
-- **IDE:** It is recommended to use IntelliJ IDEA for development. You can import the project as a Maven project in IntelliJ IDEA.
+- **IDE:** It is recommended to use IntelliJ IDEA for development. You can import the project as a Maven project in
+  IntelliJ IDEA.
 
 ## Troubleshooting
 

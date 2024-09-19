@@ -16,24 +16,6 @@ import java.util.List;
 
 
 public class Antlr {
-    public class CommentListener extends Java20ParserBaseListener {
-        private List<String> comments = new ArrayList<>();
-
-        @Override
-        public void enterEveryRule(ParserRuleContext ctx) {
-//        List<Token> tokens = ctx.getTokens();
-//        for (Token token : tokens) {
-//            if (token.getChannel() == Token.HIDDEN_CHANNEL) {
-//                comments.add(token.getText());
-//            }
-//        }
-        }
-
-        public List<String> getComments() {
-            return comments;
-        }
-    }
-
     private static void extracted1() throws IOException {
         // Read the HTML file
         String sourceCode = new String(Files.readAllBytes(Paths.get("src/main/resources/a.html")));
@@ -72,5 +54,23 @@ public class Antlr {
 
         ParseTree tree = parser.init(); // begin parsing at init rule
         System.out.println(tree.toStringTree(parser)); // print LISP-style tree
+    }
+
+    public class CommentListener extends Java20ParserBaseListener {
+        private List<String> comments = new ArrayList<>();
+
+        @Override
+        public void enterEveryRule(ParserRuleContext ctx) {
+//        List<Token> tokens = ctx.getTokens();
+//        for (Token token : tokens) {
+//            if (token.getChannel() == Token.HIDDEN_CHANNEL) {
+//                comments.add(token.getText());
+//            }
+//        }
+        }
+
+        public List<String> getComments() {
+            return comments;
+        }
     }
 }
