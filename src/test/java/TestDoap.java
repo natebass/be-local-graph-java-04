@@ -1,8 +1,8 @@
 import org.junit.jupiter.api.Test;
 
-import static info.project_act.tessellation.utilities.RdfUtilities.MergeTwoRdf;
 import static info.project_act.tessellation.feature.example.LocalFileExample.WriteExampleRDF;
 import static info.project_act.tessellation.utilities.RdfUtilities.ConvertDoapN3ToRdf;
+import static info.project_act.tessellation.utilities.RdfUtilities.MergeTwoRdf;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**

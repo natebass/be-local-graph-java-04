@@ -4,28 +4,48 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
+import org.apache.jena.riot.RDFWriter;
+import org.apache.jena.riot.SysRIOT;
 
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RdfUtilities {
+    public static void Write01(Model model, OutputStream out) {
+        Map<String, Object> properties = new HashMap<>();
+        properties.put("showXmlDeclaration", "true");
+        properties.put("tab", "2");
+
+        Model marray[];
+        RDFWriter.create()
+                .format(RDFFormat.RDFXML)
+                .set(SysRIOT.sysRdfWriterProperties, properties)
+                .source(model)
+                .output(out);
+    }
+
+    public static void Write02(Model model, OutputStream out) {
+        RDFDataMgr.write(out, model, RDFFormat.RDFXML);
+    }
+
     public static void ConvertDoapN3ToRdf(String[] args) {
-        // Define the input and output file paths
         String inputFilePath = args[0];
         String outputFilePath = args[1];
 
-        // Create an empty model
         Model model = ModelFactory.createDefaultModel();
+        Map<String, Object> properties = new HashMap<>();
+        properties.put("showXmlDeclaration", "true");
+        properties.put("tab", "2");
 
-        // Read the N3 file into the model
         try (FileInputStream in = new FileInputStream(inputFilePath)) {
             model.read(in, null, "N3");
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        // Write the model to an RDF file in RDF/XML format
         try (FileOutputStream out = new FileOutputStream(outputFilePath)) {
-            RDFDataMgr.write(out, model, RDFFormat.RDFXML);
+            Write01(model, out);
         } catch (IOException e) {
             e.printStackTrace();
         }

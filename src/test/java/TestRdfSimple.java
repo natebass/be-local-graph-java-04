@@ -57,7 +57,7 @@ public class TestRdfSimple {
         createSimpleRDFFile(file2Path, "http://example.org/resource1", "http://example.org/property", "value1");
         mergeSimpleRDFFiles(file1Path, file2Path, mergedFilePath);
 
-         assertTrue(Utilities.compareRDFFiles(mergedFilePath, file1Path), "Merged file should be the same as the original");
+        assertTrue(Utilities.compareRDFFiles(mergedFilePath, file1Path), "Merged file should be the same as the original");
 
         // Clean up 3 files: file1.rdf, file2.rdf, and merged.rdf.
         Utilities.deleteFile(file1Path);
@@ -72,7 +72,7 @@ public class TestRdfSimple {
         createSimpleRDFFile(file2Path, "http://example.org/resource2", "http://example.org/property", "value2");
         mergeSimpleRDFFiles(file1Path, file2Path, mergedFilePath);
 
-         assertFalse(Utilities.compareRDFFiles(mergedFilePath, file1Path), "Merged file should be different from the original");
+        assertFalse(Utilities.compareRDFFiles(mergedFilePath, file1Path), "Merged file should be different from the original");
 
         // Clean up 3 files: file1.rdf, file2.rdf, and merged.rdf.
         Utilities.deleteFile(file1Path);

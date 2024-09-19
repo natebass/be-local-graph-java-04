@@ -1,35 +1,39 @@
 package info.project_act.tessellation.feature.example;
 
+import info.project_act.tessellation.utilities.RdfUtilities;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.riot.RDFDataMgr;
-import org.apache.jena.riot.RDFFormat;
-import org.apache.jena.riot.RDFWriter;
-import org.apache.jena.riot.SysRIOT;
 import org.apache.jena.sparql.vocabulary.FOAF;
 import org.apache.jena.vocabulary.RDF;
 
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * A class that demonstrates reading and writing RDF data using Jena.
  */
 public class LocalFileExample {
-    public static void ReadExample() {
+    /**
+     * Print contents of ov-tessellation doap.rdf in the console.
+     */
+    public static void ReadExample(String[] args) {
         Model model = ModelFactory.createDefaultModel();
         InputStream in = RDFDataMgr.open("src/main/resources/doap.rdf");
         model.read(in, null);
         model.write(System.out);
     }
 
+    /**
+     * Create RDF file that matches ov-tessellation doap.rdf.
+     *
+     * @param args The file path to write the RDF file.
+     */
     public static void WriteExampleRDF(String[] args) {
-        // WARNING: Temporary file path for testing.
-        var testFilePath = args[0];
+        var filePath = args[0];
+
         Model model = ModelFactory.createDefaultModel();
         String doapNS = "http://usefulinc.com/ns/doap#";
         String foafNS = "http://xmlns.com/foaf/0.1/";
@@ -37,26 +41,7 @@ public class LocalFileExample {
         // Set custom namespace prefixes doap and foaf. The default is j.1, j.2.
         model.setNsPrefix("doap", doapNS);
         model.setNsPrefix("foaf", foafNS);
-        CreateOvTessellationRdf(model, doapNS);
 
-        // Properties to be set.
-        Map<String, Object> properties = new HashMap<>();
-        properties.put("showXmlDeclaration", "true");
-        properties.put("tab", "2");
-
-        Model marray[];
-        try (OutputStream out = new FileOutputStream(testFilePath)) {
-            RDFWriter.create()
-                    .format(RDFFormat.RDFXML)
-                    .set(SysRIOT.sysRdfWriterProperties, properties)
-                    .source(model)
-                    .output(out);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static void CreateOvTessellationRdf(Model model, String doapNS) {
         Resource project = model.createResource("https://project-act.info/projects/ov-tessellation");
         project.addProperty(RDF.type, model.createResource(doapNS + "Project"));
 
@@ -89,5 +74,11 @@ public class LocalFileExample {
         project.addProperty(model.createProperty(doapNS, "repository"), repository);
 
         project.addProperty(FOAF.maker, model.createResource("https://project-act.info/people/DanHugo"));
+
+        try (OutputStream out = new FileOutputStream(filePath)) {
+            RdfUtilities.Write01(model, out);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
