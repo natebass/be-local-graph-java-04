@@ -1,6 +1,6 @@
 {
     "recommendations": [
-        "vscjava.vscode-java-pack",
-        "redhat.vscode-xml"
+        "redhat.vscode-xml",
+        "vscjava.vscode-java-pack"
     ]
 }

@@ -1,5 +1,13 @@
 package info.project_act.tessellation.utilities;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.riot.RDFDataMgr;
@@ -7,17 +15,13 @@ import org.apache.jena.riot.RDFFormat;
 import org.apache.jena.riot.RDFWriter;
 import org.apache.jena.riot.SysRIOT;
 
-import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
-
 public class RdfUtilities {
     public static void Write01(Model model, OutputStream out) {
         Map<String, Object> properties = new HashMap<>();
         properties.put("showXmlDeclaration", "true");
         properties.put("tab", "2");
 
-        Model marray[];
+        // Model marray[];
         RDFWriter.create()
                 .format(RDFFormat.RDFXML)
                 .set(SysRIOT.sysRdfWriterProperties, properties)
