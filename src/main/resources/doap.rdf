@@ -7,7 +7,7 @@
   <doap:Project rdf:about="https://project-act.info/projects/ov-tessellation">
     <doap:name>Tessellation Project Overview</doap:name>
     <doap:shortdesc>The goal of the Tessellation Project is to establish an opt-in, decentralized means of project discovery to capture, communicate, and collaborate.</doap:shortdesc>
-    <doap:description> 
+    <doap:description>
        The Tessellation Overview is a starting point for specification, documentation, and ideation toward development of essential and useful components
        which will make up a functional system of opt-in advertisement of organization and project participatns in one or more development communities to
        fascilitate collaboration without a top down management infrastructure.
