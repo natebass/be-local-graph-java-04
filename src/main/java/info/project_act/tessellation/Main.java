@@ -1,11 +1,11 @@
 package info.project_act.tessellation;
 
-import info.project_act.tessellation.cmd.ProjectAnalyzerCommand;
+import info.project_act.tessellation.cmd.LocalGraphCommand;
 import picocli.CommandLine;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        int exitCode = new CommandLine(new ProjectAnalyzerCommand()).execute(args);
+        int exitCode = new CommandLine(new LocalGraphCommand()).execute(args);
         System.exit(exitCode);
     }
 }
