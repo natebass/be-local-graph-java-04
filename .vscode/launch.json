@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch with Arguments Prompt",
+            "request": "launch",
+            "mainClass": "info.project_act.tessellation.Main",
+            "args": "${command:SpecifyProgramArgs}"
+        },
+        {
+            "type": "java",
+            "name": "local",
+            "request": "launch",
+            "mainClass": "info.project_act.tessellation.Main",
+            "args": "local"
+        },
+        {
+            "type": "java",
+            "name": "github",
+            "request": "launch",
+            "mainClass": "info.project_act.tessellation.Main",
+            "args": "github"
+        },
+        {
+            "type": "java",
+            "name": "convert",
+            "request": "launch",
+            "mainClass": "info.project_act.tessellation.Main",
+            "args": "convert"
+        }
+    ]
+}
