@@ -8,6 +8,31 @@ import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Parameters;
 
+/**
+ * The LocalGraphCommand class is a command-line tool that analyzes project
+ * directories.
+ * It supports various commands and options to perform different types of
+ * analysis.
+ * 
+ * Commands:
+ * - "local": Analyzes the specified project directory.
+ * - "github": Fetches and analyzes a project from a specified GitHub URL.
+ * - "convert": Converts an N3 file to RDF format.
+ * 
+ * Options:
+ * - -n, --n3: Specifies the path to the N3 file to be converted to RDF.
+ * - -d, --directory: Specifies the project directory to analyze.
+ * - -l, --lang: Specifies the programming language used by the project.
+ * - -g, --github: Specifies the GitHub URL of the project.
+ * 
+ * Usage:
+ * java -jar your-jar-file.jar analyze <command> [options]
+ * 
+ * Example:
+ * java -jar your-jar-file.jar analyze local -d /path/to/project -l java
+ * java -jar your-jar-file.jar analyze github -g https://github.com/user/repo
+ * java -jar your-jar-file.jar analyze convert -n /path/to/file.n3
+ */
 @Command(name = "analyze", description = "Analyzes the project directory")
 public class LocalGraphCommand implements Runnable {
 
